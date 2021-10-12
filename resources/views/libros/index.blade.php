@@ -13,6 +13,39 @@
   <body>
     <h1>Listado de libros</h1>
 
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre del libro</th>
+                            <th scope="col">Editorial</th>
+                            <th scope="col">Fecha de publicacion</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($libros as $key => $libro)
+                        <tr>
+                            <td> {{ $libro->id }} </td>
+                            <td> {{ $libro->nombre }} </td>
+                            <td> {{ $libro->editorial }} </td>
+                            <td> {{ $libro->fecha_de_publicacion }} </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-primary">Editar</button>
+                                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                {{ $libros->links() }}
+            </div>
+        </div>
+    </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

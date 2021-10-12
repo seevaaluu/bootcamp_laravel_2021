@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Libro;
 
 class LibrosController extends Controller
 {
@@ -12,8 +13,10 @@ class LibrosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('libros.index');
+    { 
+        $libros = Libro::paginate(10);
+        
+        return view('libros.index')->with('libros', $libros);
     }
 
     /**
