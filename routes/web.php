@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('/hola_mundo', function() {
     return 'Hola mundo web';
 })->name('hola_mundo');
+
+
+Route::get('/libros', 'LibrosController@index')->name('libros.index');
