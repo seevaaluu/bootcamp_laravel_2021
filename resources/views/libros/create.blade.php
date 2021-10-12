@@ -16,18 +16,19 @@
         <h1>Formulario de creacion de libros</h1>
         <div class="row">
             <div class="col">
-                <form action="">
+                <form action="{{ route('libros.store') }}" method="post">
+                    @csrf
                     <div class="mb-3">
                         <label class="form-label">Nombre del libro</label>
-                        <input type="text" name="nombre" class="form-control">
+                        <input type="text" name="nombre" required class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Editorial</label>
-                        <input type="text" name="editorial" class="form-control">
+                        <input type="text" required name="editorial" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Fecha de publicacion</label>
-                        <input type="date" name="fecha_de_publicacion" class="form-control">
+                        <input type="date" required name="fecha_de_publicacion" class="form-control">
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary mb-3">Guardar</button>
@@ -36,6 +37,14 @@
             </div>
         </div>
     </div>
+
+    @if($errors->any()) 
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger">
+                {{ $error }}
+            </div>
+        @endforeach
+    @endif
 
     <!-- Optional JavaScript; choose one of the two! -->
 

@@ -14,7 +14,7 @@ class LibrosController extends Controller
      */
     public function index()
     { 
-        $libros = Libro::paginate(10);
+        $libros = Libro::orderBy('id', 'desc')->paginate(10);
         
         return view('libros.index')->with('libros', $libros);
     }
@@ -37,7 +37,20 @@ class LibrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'editorial' => 'required',
+            'fecha_de_publicacion' => 'required|date'
+        ]);
+
+        $libro = new Libro;
+        $libro->nombre = $request->nombre;
+        $libro->editorial = $request->editorial;
+        $libro->fecha_de_publicacion = $request->fecha_de_publicacion;
+        $libro->autor_id = 1;
+        $libro->save();
+
+        return "El libro se ha registrado correctamente";
     }
 
     /**
