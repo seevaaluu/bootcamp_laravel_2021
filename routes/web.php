@@ -19,5 +19,6 @@ Route::get('/hola_mundo', function() {
     return 'Hola mundo web';
 })->name('hola_mundo');
 
-
+// Routes libros
 Route::get('/libros', 'LibrosController@index')->name('libros.index');
+Route::get('/libros/create', 'LibrosController@create')->name('libros.create');

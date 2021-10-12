@@ -16,6 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <a href="{{ route('libros.create') }}" class="btn btn-primary">Crear registro</a>
                 <table class="table">
                     <thead>
                         <tr>
