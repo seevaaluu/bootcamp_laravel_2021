@@ -20,6 +20,8 @@ Route::get('/hola_mundo', function() {
 })->name('hola_mundo');
 
 // Routes libros
-Route::get('/libros', 'LibrosController@index')->name('libros.index');
+/*Route::get('/libros', 'LibrosController@index')->name('libros.index');
 Route::get('/libros/create', 'LibrosController@create')->name('libros.create');
-Route::post('/libros', 'LibrosController@store')->name('libros.store');
+Route::post('/libros', 'LibrosController@store')->name('libros.store');*/
+
+Route::resource('/libros', 'LibrosController');
