@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!--  meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,15 +20,15 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nombre del libro</label>
-                        <input type="text" name="nombre" required class="form-control">
+                        <input type="text" name="nombre" value="{{ old('nombre') }}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Editorial</label>
-                        <input type="text" required name="editorial" class="form-control">
+                        <input type="text"  name="editorial" value="{{ old('editorial') }}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Fecha de publicacion</label>
-                        <input type="date" required name="fecha_de_publicacion" class="form-control">
+                        <input type="date"  name="fecha_de_publicacion" value="{{ old('fecha_de_publicacion') }}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary mb-3">Guardar</button>
