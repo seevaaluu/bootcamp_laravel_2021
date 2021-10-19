@@ -36,7 +36,11 @@
                             <td> {{ $libro->fecha_de_publicacion }} </td>
                             <td>
                                 <a href="{{ route('libros.edit', $libro->id) }}" class="btn btn-outline-primary">Editar</a>
-                                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                                <form action="{{ route('libros.destroy', $libro) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-outline-danger">Eliminar</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

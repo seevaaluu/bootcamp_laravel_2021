@@ -72,7 +72,7 @@ class LibrosController extends Controller
      */
     public function edit($id)
     {
-        $libro = Libro::find($id);
+        $libro = Libro::findOrFail($id);
         
         return view('libros.edit')->with('libro', $libro);
     }
@@ -110,6 +110,9 @@ class LibrosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $libro = Libro::findOrFail($id);
+        $libro->delete();
+
+        return "El libro se ha eliminado correctamente";
     }
 }

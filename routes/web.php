@@ -25,6 +25,7 @@ Route::get('/libros/create', 'LibrosController@create')->name('libros.create');
 Route::post('/libros', 'LibrosController@store')->name('libros.store');
 Route::get('/libros/{id}/edit', 'LibrosController@edit')->name('libros.edit');
 Route::patch('/libros/{id}', 'LibrosController@update')->name('libros.update');
+Route::delete('/libros/{id}', 'LibrosController@destroy')->name('libros.destroy');
 
 /*Route::resource('/libros', 'LibrosController')->only([
     'index', 'show'
