@@ -35,7 +35,7 @@
                             <td> {{ $libro->editorial }} </td>
                             <td> {{ $libro->fecha_de_publicacion }} </td>
                             <td>
-                                <button type="button" class="btn btn-outline-primary">Editar</button>
+                                <a href="{{ route('libros.edit', $libro->id) }}" class="btn btn-outline-primary">Editar</a>
                                 <button type="button" class="btn btn-outline-danger">Eliminar</button>
                             </td>
                         </tr>

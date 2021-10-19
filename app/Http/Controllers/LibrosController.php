@@ -72,7 +72,9 @@ class LibrosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $libro = Libro::find($id);
+        
+        return view('libros.edit')->with('libro', $libro);
     }
 
     /**
@@ -84,7 +86,20 @@ class LibrosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'editorial' => 'required',
+            'fecha_de_publicacion' => 'required|date'
+        ]);
+
+        $libro = Libro::findOrFail($id);
+        $libro->nombre = $request->nombre;
+        $libro->editorial = $request->editorial;
+        $libro->fecha_de_publicacion = $request->fecha_de_publicacion;
+        $libro->autor_id = 1;
+        $libro->save();
+
+        return "El libro se ha actualizado correctamente";
     }
 
     /**

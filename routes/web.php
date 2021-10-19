@@ -20,8 +20,12 @@ Route::get('/hola_mundo', function() {
 })->name('hola_mundo');
 
 // Routes libros
-/*Route::get('/libros', 'LibrosController@index')->name('libros.index');
+Route::get('/libros', 'LibrosController@index')->name('libros.index');
 Route::get('/libros/create', 'LibrosController@create')->name('libros.create');
-Route::post('/libros', 'LibrosController@store')->name('libros.store');*/
+Route::post('/libros', 'LibrosController@store')->name('libros.store');
+Route::get('/libros/{id}/edit', 'LibrosController@edit')->name('libros.edit');
+Route::patch('/libros/{id}', 'LibrosController@update')->name('libros.update');
 
-Route::resource('/libros', 'LibrosController');
+/*Route::resource('/libros', 'LibrosController')->only([
+    'index', 'show'
+]);*/
