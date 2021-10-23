@@ -8,6 +8,9 @@
                     <div class="card-body">
                         I'm an example component.
                     </div>
+                    <v-btn block color="primary">
+                        Block Button
+                    </v-btn>
                 </div>
             </div>
         </div>
