@@ -38,4 +38,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/libros/{id}/edit', 'LibrosController@edit')->name('libros.edit');
     Route::patch('/libros/{id}', 'LibrosController@update')->name('libros.update');
     Route::delete('/libros/{id}', 'LibrosController@destroy')->name('libros.destroy');
+
+    Route::get('/get-libros', 'LibrosController@get_libros');
 });

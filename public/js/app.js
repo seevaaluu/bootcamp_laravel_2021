@@ -1935,6 +1935,229 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Libros/IndexComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Libros/IndexComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      success: "",
+      dialogNote: {},
+      alertSuccess: false,
+      libro: {},
+      dialog: false,
+      libros: {},
+      headers: [{
+        text: 'Nombre',
+        align: 'start',
+        sortable: false,
+        value: 'nombre'
+      }, {
+        text: 'Editorial',
+        value: 'editorial'
+      }, {
+        text: 'Fecha de Publicación',
+        value: 'fecha_de_publicacion'
+      }, {
+        text: 'Acciones'
+      }]
+    };
+  },
+  methods: {
+    getLibros: function getLibros() {
+      var _this = this;
+
+      var urlLibros = "/get-libros";
+      axios.get(urlLibros).then(function (response) {
+        _this.libros = response.data;
+      });
+    },
+    storeLibros: function storeLibros() {
+      var _this2 = this;
+
+      axios.post('/libros', this.libro).then(function (response) {
+        _this2.success = response.data;
+        _this2.alertSuccess = true;
+
+        _this2.getLibros();
+      });
+    },
+    updateLibros: function updateLibros(item) {
+      var _this3 = this;
+
+      axios.patch('/libros/' + item.id, item).then(function (response) {
+        _this3.success = response.data;
+        _this3.alertSuccess = true;
+
+        _this3.getLibros();
+      });
+    },
+    deleteLibros: function deleteLibros(item) {
+      var _this4 = this;
+
+      axios["delete"]('/libros/' + item.id, item).then(function (response) {
+        _this4.success = response.data;
+        _this4.alertSuccess = true;
+
+        _this4.getLibros();
+      });
+    }
+  },
+  created: function created() {
+    this.getLibros();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37622,6 +37845,483 @@ var render = function() {
       ])
     ])
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Libros/IndexComponent.vue?vue&type=template&id=10f4cb2e&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Libros/IndexComponent.vue?vue&type=template&id=10f4cb2e& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "libros" },
+    [
+      _c("div", { staticClass: "crear-libros" }, [
+        _c(
+          "div",
+          { staticClass: "text-right" },
+          [
+            _c(
+              "v-dialog",
+              {
+                attrs: { width: "500" },
+                scopedSlots: _vm._u([
+                  {
+                    key: "activator",
+                    fn: function(ref) {
+                      var on = ref.on
+                      var attrs = ref.attrs
+                      return [
+                        _c(
+                          "v-btn",
+                          _vm._g(
+                            _vm._b(
+                              { attrs: { color: "primary", dark: "" } },
+                              "v-btn",
+                              attrs,
+                              false
+                            ),
+                            on
+                          ),
+                          [
+                            _vm._v(
+                              "\n                Agregar Libro\n                "
+                            )
+                          ]
+                        )
+                      ]
+                    }
+                  }
+                ]),
+                model: {
+                  value: _vm.dialog,
+                  callback: function($$v) {
+                    _vm.dialog = $$v
+                  },
+                  expression: "dialog"
+                }
+              },
+              [
+                _vm._v(" "),
+                _c(
+                  "v-card",
+                  [
+                    _c(
+                      "v-card-title",
+                      { staticClass: "text-h5 grey lighten-2" },
+                      [
+                        _vm._v(
+                          "\n                Agregar Libro\n                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-card-text",
+                      [
+                        _c(
+                          "v-container",
+                          [
+                            _c(
+                              "v-layout",
+                              { attrs: { row: "", flex: "" } },
+                              [
+                                _c(
+                                  "v-flex",
+                                  { attrs: { sm12: "", md6: "" } },
+                                  [
+                                    _c("v-text-field", {
+                                      attrs: { label: "Nombre" },
+                                      model: {
+                                        value: _vm.libro.nombre,
+                                        callback: function($$v) {
+                                          _vm.$set(_vm.libro, "nombre", $$v)
+                                        },
+                                        expression: "libro.nombre"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-flex",
+                                  { attrs: { sm12: "", md6: "" } },
+                                  [
+                                    _c("v-text-field", {
+                                      attrs: { label: "Editorial" },
+                                      model: {
+                                        value: _vm.libro.editorial,
+                                        callback: function($$v) {
+                                          _vm.$set(_vm.libro, "editorial", $$v)
+                                        },
+                                        expression: "libro.editorial"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-flex",
+                                  { attrs: { sm12: "", md6: "" } },
+                                  [
+                                    _c("v-text-field", {
+                                      attrs: { label: "Fecha", type: "date" },
+                                      model: {
+                                        value: _vm.libro.fecha_de_publicacion,
+                                        callback: function($$v) {
+                                          _vm.$set(
+                                            _vm.libro,
+                                            "fecha_de_publicacion",
+                                            $$v
+                                          )
+                                        },
+                                        expression: "libro.fecha_de_publicacion"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("v-divider"),
+                    _vm._v(" "),
+                    _c(
+                      "v-card-actions",
+                      [
+                        _c("v-spacer"),
+                        _vm._v(" "),
+                        _c(
+                          "v-btn",
+                          {
+                            attrs: { color: "primary", text: "" },
+                            on: {
+                              click: function($event) {
+                                ;(_vm.dialog = false), _vm.storeLibros()
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Guardar\n                "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "tabla-libros" },
+        [
+          _c("v-data-table", {
+            staticClass: "elevation-1",
+            attrs: {
+              headers: _vm.headers,
+              items: _vm.libros.data,
+              "items-per-page": 5
+            },
+            scopedSlots: _vm._u([
+              {
+                key: "item",
+                fn: function(ref) {
+                  var item = ref.item
+                  return [
+                    _c("tr", [
+                      _c("td", [_vm._v(_vm._s(item.nombre))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.editorial))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.fecha_de_publicacion))]),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "v-icon",
+                            {
+                              staticClass: "mr-2",
+                              attrs: { small: "" },
+                              on: {
+                                click: function($event) {
+                                  $event.stopPropagation()
+                                  return _vm.$set(_vm.dialogNote, item.id, true)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                mdi-pencil\n            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-dialog",
+                            {
+                              key: item.id,
+                              attrs: {
+                                scrollable: "",
+                                "max-width": "500",
+                                "max-height": "600"
+                              },
+                              model: {
+                                value: _vm.dialogNote[item.id],
+                                callback: function($$v) {
+                                  _vm.$set(_vm.dialogNote, item.id, $$v)
+                                },
+                                expression: "dialogNote[item.id]"
+                              }
+                            },
+                            [
+                              _c(
+                                "v-card",
+                                [
+                                  _c(
+                                    "v-card-title",
+                                    [
+                                      _c("span", { staticClass: "headline" }, [
+                                        _vm._v(
+                                          "Editar Libro: " + _vm._s(item.nombre)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            color: "primary",
+                                            icon: "",
+                                            text: ""
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              $event.stopPropagation()
+                                              return _vm.$set(
+                                                _vm.dialogNote,
+                                                item.id,
+                                                false
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_c("v-icon", [_vm._v("mdi-close")])],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-text",
+                                    [
+                                      _c(
+                                        "v-container",
+                                        [
+                                          _c(
+                                            "v-layout",
+                                            { attrs: { row: "", flex: "" } },
+                                            [
+                                              _c(
+                                                "v-flex",
+                                                {
+                                                  attrs: { sm12: "", md6: "" }
+                                                },
+                                                [
+                                                  _c("v-text-field", {
+                                                    attrs: { label: "Nombre" },
+                                                    model: {
+                                                      value: item.nombre,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          item,
+                                                          "nombre",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression: "item.nombre"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-flex",
+                                                {
+                                                  attrs: { sm12: "", md6: "" }
+                                                },
+                                                [
+                                                  _c("v-text-field", {
+                                                    attrs: {
+                                                      label: "Editorial"
+                                                    },
+                                                    model: {
+                                                      value: item.editorial,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          item,
+                                                          "editorial",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "item.editorial"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-flex",
+                                                {
+                                                  attrs: { sm12: "", md6: "" }
+                                                },
+                                                [
+                                                  _c("v-text-field", {
+                                                    attrs: {
+                                                      label: "Fecha",
+                                                      type: "date"
+                                                    },
+                                                    model: {
+                                                      value:
+                                                        item.fecha_de_publicacion,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          item,
+                                                          "fecha_de_publicacion",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "item.fecha_de_publicacion"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.updateLibros(item)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("actualizar")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-icon",
+                            {
+                              attrs: { small: "" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteLibros(item)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                mdi-delete\n            "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  ]
+                }
+              }
+            ])
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-alert",
+        {
+          attrs: { dismissible: "", type: "success" },
+          model: {
+            value: _vm.alertSuccess,
+            callback: function($$v) {
+              _vm.alertSuccess = $$v
+            },
+            expression: "alertSuccess"
+          }
+        },
+        [_vm._v(_vm._s(_vm.success))]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -95413,6 +96113,7 @@ Vue.use(vuetify__WEBPACK_IMPORTED_MODULE_0___default.a);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('index-component', __webpack_require__(/*! ./components/Libros/IndexComponent.vue */ "./resources/js/components/Libros/IndexComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -95535,6 +96236,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Libros/IndexComponent.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Libros/IndexComponent.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _IndexComponent_vue_vue_type_template_id_10f4cb2e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IndexComponent.vue?vue&type=template&id=10f4cb2e& */ "./resources/js/components/Libros/IndexComponent.vue?vue&type=template&id=10f4cb2e&");
+/* harmony import */ var _IndexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IndexComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/Libros/IndexComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _IndexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _IndexComponent_vue_vue_type_template_id_10f4cb2e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _IndexComponent_vue_vue_type_template_id_10f4cb2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Libros/IndexComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Libros/IndexComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/Libros/IndexComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./IndexComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Libros/IndexComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Libros/IndexComponent.vue?vue&type=template&id=10f4cb2e&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/Libros/IndexComponent.vue?vue&type=template&id=10f4cb2e& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_template_id_10f4cb2e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./IndexComponent.vue?vue&type=template&id=10f4cb2e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Libros/IndexComponent.vue?vue&type=template&id=10f4cb2e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_template_id_10f4cb2e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_template_id_10f4cb2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

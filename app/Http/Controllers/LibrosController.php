@@ -16,7 +16,7 @@ class LibrosController extends Controller
     { 
         $libros = Libro::orderBy('id', 'desc')->paginate(10);
         
-        return view('libros.index')->with('libros', $libros);
+        return view('libros-vue.index')->with('libros', $libros);
     }
 
     /**
@@ -114,5 +114,17 @@ class LibrosController extends Controller
         $libro->delete();
 
         return "El libro se ha eliminado correctamente";
+    }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function get_libros()
+    { 
+        $libros = Libro::orderBy('id', 'desc')->paginate(10);
+        
+        return $libros;
     }
 }

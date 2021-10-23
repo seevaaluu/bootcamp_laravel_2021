@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <example-component/>
+                    <index-component/>
                 </div>
             </div>
         </div>
